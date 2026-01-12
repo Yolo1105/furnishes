@@ -113,15 +113,27 @@ export default function BudgetPage() {
     if (currentStep < 4) {
       goToStep(currentStep + 1);
     } else {
-      // Save plan
+      // Save plan - map to BudgetPlan type
+      const totalAllocated = Object.values(allocations).reduce((sum, data) => sum + data.amount, 0);
+      const confidence: 'on_track' | 'over_budget' | 'under_budget' = 
+        totalAllocated > budget ? 'over_budget' :
+        totalAllocated < budget * 0.9 ? 'under_budget' :
+        'on_track';
+      
       const plan = {
         total: budget,
-        strictness: strictness === 'hard' ? 'hard_cap' : 'flexible',
-        allocations: Object.entries(allocations).map(([id, data]) => ({
-          category: id,
-          amount: data.amount,
-          percent: data.pct
-        }))
+        allocations: {
+          seating: allocations.seating?.amount || 0,
+          storage: allocations.storage?.amount || 0,
+          lighting: allocations.lighting?.amount || 0,
+          bed_or_desk: allocations.tables?.amount || 0,
+          rug_decor: allocations.decor?.amount || 0,
+          buffer: Math.max(0, budget - totalAllocated)
+        },
+        tradeoffStatement: strictness === 'hard' 
+          ? `Hard cap of $${budget.toLocaleString()} - no flexibility to exceed budget.`
+          : `Flexible budget allows 10-15% stretch for the right pieces.`,
+        confidence
       };
       setBudgetPlan(plan);
       router.push('/room-planner');
