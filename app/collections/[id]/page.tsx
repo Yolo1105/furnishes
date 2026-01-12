@@ -57,7 +57,7 @@ export default function ProductDetailPage() {
   const handleAddToCart = () => {
     if (!product) return;
 
-    const colorName = product.colors?.find(c => c.value === selectedColor)?.name || selectedColor;
+    const colorName = product.colors?.find((c: { name: string; value: string }) => c.value === selectedColor)?.name || selectedColor;
     
     addToCart({
       productId: product.id,

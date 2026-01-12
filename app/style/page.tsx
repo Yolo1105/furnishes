@@ -309,7 +309,7 @@ export default function StylePage() {
     }
     // When starting at stage 1, show 0% progress
     return 0;
-  }, [currentStage, completedStages]);
+  }, [completedStages]);
 
   return (
     <div className={styles.stylePage}>

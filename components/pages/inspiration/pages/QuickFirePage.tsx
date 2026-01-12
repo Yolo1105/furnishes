@@ -24,7 +24,7 @@ export default function QuickFirePage() {
       }, 800);
       return () => clearTimeout(timer);
     }
-  }, [selected.length, nextPage, quickChoices.length]);
+  }, [selected.length, nextPage]);
 
   return (
     <div className={styles.questionPage}>

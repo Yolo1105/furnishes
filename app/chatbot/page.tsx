@@ -329,7 +329,7 @@ export default function ChatbotPage() {
       preferenceRemovals: response.preferenceRemovals,
       sourceHighlights: response.sourceHighlights,
     };
-  }, []);
+  }, [DEMO_RESPONSES]);
 
   // Send message handler
   const handleSendMessage = useCallback((content: string) => {
