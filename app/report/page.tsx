@@ -84,7 +84,7 @@ export default function ReportPage() {
           )}
 
           <div className={styles.nextSteps}>
-            <h3 className={styles.nextStepsTitle}>What's Next</h3>
+            <h3 className={styles.nextStepsTitle}>What&apos;s Next</h3>
             <ul className={styles.nextStepsList}>
               <li>Review your shopping list and compare prices</li>
               <li>Share with anyone who needs to approve</li>

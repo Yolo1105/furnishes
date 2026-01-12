@@ -82,7 +82,7 @@ export default function StyleSummaryPanel({
       <div className={styles.panelSection}>
         <p className={styles.sectionLabel}>STYLE SNAPSHOT</p>
         <p className={styles.snapshotText}>
-          Tell us how you want this space to feel and we'll shape the materials, palette, and guardrails for you.
+          Tell us how you want this space to feel and we&apos;ll shape the materials, palette, and guardrails for you.
         </p>
       </div>
 

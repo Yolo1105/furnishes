@@ -29,8 +29,8 @@ export default function QuickFirePage() {
   return (
     <div className={styles.questionPage}>
       <div className={styles.leftSection}>
-        <h2 className={styles.question}>Time for some quick choices. We're going to make you pick between two things, and there's no wrong answer - we just want to see what you're naturally drawn to.</h2>
-        <p className={styles.instruction}>Just go with your gut on these, don't think too hard about it.</p>
+        <h2 className={styles.question}>Time for some quick choices. We&apos;re going to make you pick between two things, and there&apos;s no wrong answer - we just want to see what you&apos;re naturally drawn to.</h2>
+        <p className={styles.instruction}>Just go with your gut on these, don&apos;t think too hard about it.</p>
         <p className={styles.hint}>8 rapid choices coming your way. Click what feels right and keep moving.</p>
       </div>
       <div className={styles.rightSection}>

@@ -33,15 +33,15 @@ export default function LifeRealityPage() {
   return (
     <div className={styles.questionPage}>
       <div className={styles.leftSection}>
-        <h2 className={styles.question}>Let's be honest here. We need to know what your actual life is like, not the Instagram-perfect version of it.</h2>
+        <h2 className={styles.question}>Let&apos;s be honest here. We need to know what your actual life is like, not the Instagram-perfect version of it.</h2>
         <p className={styles.instruction}>
-          No judgment at all - we're all just trying to make our spaces work for us. The more real you are, the better suggestions we can give you.
+          No judgment at all - we&apos;re all just trying to make our spaces work for us. The more real you are, the better suggestions we can give you.
         </p>
       </div>
       <div className={styles.rightSection}>
         <div className={styles.radioGroupsContainer}>
           <div className={styles.questionGroup}>
-            <h3 className={styles.subQuestion}>How organized are you really? Are you one of those people who has a place for everything, or is your organization style more... let's call it "creative"?</h3>
+            <h3 className={styles.subQuestion}>How organized are you really? Are you one of those people who has a place for everything, or is your organization style more... let&apos;s call it &quot;creative&quot;?</h3>
             <RadioGroup
               options={organizationOptions}
               selected={answers.organization || null}

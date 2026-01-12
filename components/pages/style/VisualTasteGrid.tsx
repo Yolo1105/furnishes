@@ -86,7 +86,7 @@ export default function VisualTasteGrid({
     <div className={styles.visualTasteGrid}>
       <div className={styles.header}>
         <h3 className={styles.title}>Pick 3 that speak to you</h3>
-        <p className={styles.subtitle}>Don't overthink it—first instinct is best</p>
+        <p className={styles.subtitle}>Don&apos;t overthink it—first instinct is best</p>
       </div>
 
       <div className={styles.grid}>

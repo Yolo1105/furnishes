@@ -20,9 +20,9 @@ export default function FirstFeelingPage() {
   return (
     <div className={styles.questionPage}>
       <div className={styles.leftSection}>
-        <h2 className={styles.question}>When you're scrolling through interior photos or walking into someone's house, which spaces make you feel like you could just plop down and be totally comfortable?</h2>
-        <p className={styles.instruction}>Pick 2-3 that really speak to you, the ones where you're like "yeah, I could see myself living here."</p>
-        <p className={styles.hint}>Don't overthink it. Just trust your gut and go with what catches your eye.</p>
+        <h2 className={styles.question}>When you&apos;re scrolling through interior photos or walking into someone&apos;s house, which spaces make you feel like you could just plop down and be totally comfortable?</h2>
+        <p className={styles.instruction}>Pick 2-3 that really speak to you, the ones where you&apos;re like &quot;yeah, I could see myself living here.&quot;</p>
+        <p className={styles.hint}>Don&apos;t overthink it. Just trust your gut and go with what catches your eye.</p>
       </div>
       <div className={styles.rightSection}>
         <ImageGrid

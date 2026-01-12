@@ -57,7 +57,7 @@ export default function LiveSnapshot() {
           <div className={styles.sectionTitle}>ROOM</div>
           <div className={styles.sectionContent}>
             <div className={styles.roomInfo}>
-              {state.roomConfig.dimensions.width}' × {state.roomConfig.dimensions.length}'
+              {state.roomConfig.dimensions.width}&apos; × {state.roomConfig.dimensions.length}&apos;
             </div>
             <div className={styles.roomOpenings}>
               {state.roomConfig.openings.length} opening{state.roomConfig.openings.length !== 1 ? 's' : ''}

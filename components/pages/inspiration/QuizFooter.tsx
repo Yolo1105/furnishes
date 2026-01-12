@@ -73,7 +73,7 @@ export default function QuizFooter({
         )}
       </div>
       <div className={styles.quoteSection}>
-        <p className={styles.quote}>"{getSectionQuote()}"</p>
+        <p className={styles.quote}>&quot;{getSectionQuote()}&quot;</p>
       </div>
       <div className={styles.rightSection}>
         <button

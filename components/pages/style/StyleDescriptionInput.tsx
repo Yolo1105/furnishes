@@ -14,7 +14,7 @@ export default function StyleDescriptionInput({
 }: StyleDescriptionInputProps) {
   return (
     <div className={styles.descriptionInput}>
-      <label className={styles.label}>I'll describe it in my own words</label>
+      <label className={styles.label}>I&apos;ll describe it in my own words</label>
       <textarea
         value={description}
         onChange={(e) => onDescriptionChange(e.target.value)}

@@ -78,7 +78,7 @@ export default function CartPage() {
           </div>
           <h1 className={styles.cartEmptyTitle}>Your cart is empty</h1>
           <p className={styles.cartEmptyText}>
-            Looks like you haven't added anything to your cart yet.
+            Looks like you haven&apos;t added anything to your cart yet.
           </p>
           <Link href="/collections" className={styles.cartEmptyButton}>
             Start Shopping

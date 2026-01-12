@@ -19,7 +19,7 @@ export default function WellnessGoalPage() {
         <h2 className={styles.question}>
           If your home could give you one thing - like if it had magical powers and could solve one problem or give you one benefit - what would that be? Better sleep? A space where you can actually focus? Or just a calm environment where your mind can finally quiet down?
         </h2>
-        <p className={styles.instruction}>Think of this as your primary wellness goal. What's the one thing your space could do for you that would make the biggest difference in how you feel every day?</p>
+        <p className={styles.instruction}>Think of this as your primary wellness goal. What&apos;s the one thing your space could do for you that would make the biggest difference in how you feel every day?</p>
       </div>
       <div className={styles.rightSection}>
         <div className={styles.goalCards}>

@@ -275,12 +275,12 @@ export default function BudgetPage() {
                 {!mode && (
                   <div id="budgetIntro">
                     <div className={`${styles.stepHeader} ${styles.center}`}>
-                      <h1 className={styles.stepTitle}>What's your budget?</h1>
-                      <p className={styles.stepSubtitle}>Once we know your total, we'll help you split it across furniture categories based on what matters most to you.</p>
+                      <h1 className={styles.stepTitle}>What&apos;s your budget?</h1>
+                      <p className={styles.stepSubtitle}>Once we know your total, we&apos;ll help you split it across furniture categories based on what matters most to you.</p>
                     </div>
 
                     <div className={styles.introCard}>
-                      <div className={styles.introTitle}>Here's what we'll do:</div>
+                      <div className={styles.introTitle}>Here&apos;s what we&apos;ll do:</div>
                       <ul className={styles.introList}>
                         <li>Set your total budget</li>
                         <li>Rank which categories matter most to you</li>
@@ -299,8 +299,8 @@ export default function BudgetPage() {
                             </svg>
                           </div>
                           <div className={styles.entryCardTitle}>I know my budget</div>
-                          <div className={styles.entryCardDesc}>I have a specific amount in mind — let's figure out how to spend it wisely across categories.</div>
-                          <div className={styles.entryCardExample}>e.g., "I have $8,000 to spend"</div>
+                          <div className={styles.entryCardDesc}>I have a specific amount in mind — let&apos;s figure out how to spend it wisely across categories.</div>
+                          <div className={styles.entryCardExample}>e.g., &quot;I have $8,000 to spend&quot;</div>
                         </div>
                         <div className={styles.entryCard} onClick={() => showForm('guided')}>
                           <div className={styles.entryCardIcon}>
@@ -311,7 +311,7 @@ export default function BudgetPage() {
                             </svg>
                           </div>
                           <div className={styles.entryCardTitle}>Help me decide</div>
-                          <div className={styles.entryCardDesc}>I'm not sure what's reasonable to spend. Help me find the right budget based on my room and goals.</div>
+                          <div className={styles.entryCardDesc}>I&apos;m not sure what&apos;s reasonable to spend. Help me find the right budget based on my room and goals.</div>
                           <div className={styles.entryCardExample}>4 quick questions → personalized range</div>
                         </div>
                       </div>
@@ -383,7 +383,7 @@ export default function BudgetPage() {
                           </div>
                           <div>
                             <div className={styles.strictnessTitle}>Hard cap</div>
-                            <div className={styles.strictnessDesc}>I won't go over this amount</div>
+                            <div className={styles.strictnessDesc}>I won&apos;t go over this amount</div>
                           </div>
                         </div>
                         <div className={`${styles.strictnessOption} ${strictness === 'flexible' ? styles.selected : ''}`} onClick={() => setStrictnessOption('flexible')}>
@@ -435,8 +435,8 @@ export default function BudgetPage() {
                     </div>
 
                     <div className={styles.stepHeader}>
-                      <h1 className={styles.stepTitle}>Let's find your budget</h1>
-                      <p className={styles.stepSubtitle}>Answer a few quick questions and we'll recommend a realistic range for your situation.</p>
+                      <h1 className={styles.stepTitle}>Let&apos;s find your budget</h1>
+                      <p className={styles.stepSubtitle}>Answer a few quick questions and we&apos;ll recommend a realistic range for your situation.</p>
                     </div>
 
                     {/* Question 1 */}
@@ -486,7 +486,7 @@ export default function BudgetPage() {
                     {/* Question 3 */}
                     <div className={styles.questionCard}>
                       <div className={styles.questionNum}>3 of 6</div>
-                      <div className={styles.questionLabel}>What's your starting point?</div>
+                      <div className={styles.questionLabel}>What&apos;s your starting point?</div>
                       <div className={styles.questionOptions}>
                         <button className={`${styles.questionOption} ${questions.scope === 'empty' ? styles.selected : ''}`} onClick={() => setQuestion('scope', 'empty')}>
                           <span className={styles.optionTitle}>Empty room</span>
@@ -552,7 +552,7 @@ export default function BudgetPage() {
                       <div className={styles.questionOptions}>
                         <button className={`${styles.questionOption} ${questions.style === 'hunter' ? styles.selected : ''}`} onClick={() => setQuestion('style', 'hunter')}>
                           <span className={styles.optionTitle}>Deal hunter</span>
-                          <span className={styles.optionDesc}>I'll wait for sales, buy secondhand, mix and match</span>
+                          <span className={styles.optionDesc}>I&apos;ll wait for sales, buy secondhand, mix and match</span>
                         </button>
                         <button className={`${styles.questionOption} ${questions.style === 'balanced' ? styles.selected : ''}`} onClick={() => setQuestion('style', 'balanced')}>
                           <span className={styles.optionTitle}>Balanced</span>
@@ -560,7 +560,7 @@ export default function BudgetPage() {
                         </button>
                         <button className={`${styles.questionOption} ${questions.style === 'convenience' ? styles.selected : ''}`} onClick={() => setQuestion('style', 'convenience')}>
                           <span className={styles.optionTitle}>Convenience first</span>
-                          <span className={styles.optionDesc}>I'd rather pay more and get it done quickly</span>
+                          <span className={styles.optionDesc}>I&apos;d rather pay more and get it done quickly</span>
                         </button>
                       </div>
                     </div>
@@ -613,7 +613,7 @@ export default function BudgetPage() {
                             </div>
                             <div>
                               <div className={styles.strictnessTitle}>Hard cap</div>
-                              <div className={styles.strictnessDesc}>I won't go over this amount</div>
+                              <div className={styles.strictnessDesc}>I won&apos;t go over this amount</div>
                             </div>
                           </div>
                           <div className={`${styles.strictnessOption} ${strictness === 'flexible' ? styles.selected : ''}`} onClick={() => setStrictnessOption('flexible')}>
@@ -784,7 +784,7 @@ export default function BudgetPage() {
               <div className={styles.contentInner}>
                 <div className={styles.stepHeader}>
                   <h1 className={styles.stepTitle}>Your budget plan</h1>
-                  <p className={styles.stepSubtitle}>Here's how we recommend allocating your spending.</p>
+                  <p className={styles.stepSubtitle}>Here&apos;s how we recommend allocating your spending.</p>
                 </div>
 
                 <div className={styles.reviewHero}>

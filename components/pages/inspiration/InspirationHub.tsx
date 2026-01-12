@@ -210,7 +210,7 @@ export default function InspirationHub() {
         >
           <div className={styles.footerInner}>
             <p className={styles.footerQuote}>
-              "Your home deserves to be taken seriously."
+              &quot;Your home deserves to be taken seriously.&quot;
             </p>
 
             <div className={styles.footerStats}>

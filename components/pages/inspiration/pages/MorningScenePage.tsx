@@ -18,7 +18,7 @@ export default function MorningScenePage() {
     <div className={styles.questionPage}>
       <div className={styles.leftSection}>
         <h2 className={styles.question}>
-          Picture this: it's Sunday morning, that perfect lazy Sunday. You wake up in your dream home and open your eyes. What's the first thing you see? What does the light look like? What's the mood in the room?
+          Picture this: it&apos;s Sunday morning, that perfect lazy Sunday. You wake up in your dream home and open your eyes. What&apos;s the first thing you see? What does the light look like? What&apos;s the mood in the room?
         </h2>
       </div>
       <div className={styles.rightSection}>

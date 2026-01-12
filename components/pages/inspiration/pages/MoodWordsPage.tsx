@@ -20,8 +20,8 @@ export default function MoodWordsPage() {
   return (
     <div className={styles.questionPage}>
       <div className={styles.leftSection}>
-        <h2 className={styles.question}>If someone asked you "what vibe are you going for?" at a party, how would you describe your dream home in just a few words?</h2>
-        <p className={styles.instruction}>Pick 4-6 words that really resonate with you, the ones that make you think "yeah, that's exactly it."</p>
+        <h2 className={styles.question}>If someone asked you &quot;what vibe are you going for?&quot; at a party, how would you describe your dream home in just a few words?</h2>
+        <p className={styles.instruction}>Pick 4-6 words that really resonate with you, the ones that make you think &quot;yeah, that&apos;s exactly it.&quot;</p>
       </div>
       <div className={styles.rightSection}>
         <WordTags

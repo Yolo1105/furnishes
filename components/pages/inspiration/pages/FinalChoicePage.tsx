@@ -19,9 +19,9 @@ export default function FinalChoicePage() {
   return (
     <div className={styles.questionPage}>
       <div className={styles.leftSection}>
-        <h2 className={styles.question}>Last question. Imagine someone just walked up and handed you the keys to one of these rooms - "here you go, this is yours now, move in whenever you want."</h2>
+        <h2 className={styles.question}>Last question. Imagine someone just walked up and handed you the keys to one of these rooms - &quot;here you go, this is yours now, move in whenever you want.&quot;</h2>
         <p className={styles.instruction}>
-          Which one would you be most excited about? Which one feels like it could actually be your space, where you'd feel comfortable and happy?
+          Which one would you be most excited about? Which one feels like it could actually be your space, where you&apos;d feel comfortable and happy?
         </p>
       </div>
       <div className={styles.rightSection}>

@@ -56,7 +56,7 @@ export default function PrioritySelector({
       <div className={styles.header}>
         <h3 className={styles.title}>PROTECT YOUR PRIORITIES</h3>
         <p className={styles.subtitle}>
-          Pick {maxSelections} categories to prioritize. We'll protect these first.
+          Pick {maxSelections} categories to prioritize. We&apos;ll protect these first.
         </p>
       </div>
 

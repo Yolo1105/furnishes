@@ -90,10 +90,10 @@ export default function RoomPreview({ roomConfig, onOpeningChange }: RoomPreview
         <div>
           <h3 className={styles.previewTitle}>Preview</h3>
           <p className={styles.previewSubtitle}>
-            {placementMode 
+              {placementMode 
               ? `Click a wall to place ${placementMode === 'door' ? 'door' : 'window'}. Press Esc to cancel.`
               : roomConfig 
-                ? 'Click "Add door" or "Add window" to start placement'
+                ? 'Click &quot;Add door&quot; or &quot;Add window&quot; to start placement'
                 : 'Select a preset or enter dimensions. Preview updates instantly.'}
           </p>
         </div>
@@ -399,7 +399,7 @@ export default function RoomPreview({ roomConfig, onOpeningChange }: RoomPreview
         {(roomConfig || true) && (
           <div className={styles.roomSummary}>
             <div className={styles.summaryRow}>
-              <span className={styles.summaryLabel}>{width}' × {length}'</span>
+              <span className={styles.summaryLabel}>{width}&apos; × {length}&apos;</span>
             </div>
             <div className={styles.summaryRow}>
               <span className={styles.summaryValue}>{width * length} sq ft</span>

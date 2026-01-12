@@ -362,7 +362,7 @@ export default function StylePage() {
               <section className={`${styles.stage} ${currentStage === 1 ? styles.active : ''}`} data-stage="1">
                 <div className={styles.stageHeader}>
                   <h1 className={styles.stageTitle}>Room Setup</h1>
-                  <p className={styles.stageDescription}>Let's start by understanding the space you want to transform. This helps us tailor recommendations to your specific needs.</p>
+                  <p className={styles.stageDescription}>Let&apos;s start by understanding the space you want to transform. This helps us tailor recommendations to your specific needs.</p>
                 </div>
 
                 {/* Which room are you designing? */}
@@ -435,7 +435,7 @@ export default function StylePage() {
                       },
                       { 
                         name: 'Nursery', 
-                        desc: 'Child\'s room', 
+                        desc: 'Child&apos;s room', 
                         paths: [
                           'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z',
                           'M12 2v4',
@@ -1063,7 +1063,7 @@ export default function StylePage() {
                   <div className={styles.sectionHeader}>
                     <div>
                       <h3 className={styles.sectionTitle}>Budget Range</h3>
-                      <p className={styles.sectionSubtitle}>What's your investment level?</p>
+                      <p className={styles.sectionSubtitle}>What&apos;s your investment level?</p>
                     </div>
                     <span className={`${styles.sectionBadge} ${styles.required}`}>Required</span>
                   </div>
@@ -1150,7 +1150,7 @@ export default function StylePage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className={styles.guardrailTitle}>Hard No's</h3>
+                      <h3 className={styles.guardrailTitle}>Hard No&apos;s</h3>
                       <p className={styles.guardrailSubtitle}>Things to completely avoid</p>
                     </div>
                   </div>
