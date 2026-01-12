@@ -1,0 +1,259 @@
+/* Pagination Wrapper - Outside peach section */
+.paginationWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem clamp(24px, 5vw, 60px) 3rem;
+  background-color: transparent;
+}
+
+.aboutUsSection {
+  width: 100%;
+  padding: 24px clamp(24px, 5vw, 60px) 32px;
+  background-color: var(--background, #ffeddf);
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0;
+}
+
+.paginationButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #E55E00;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.paginationButton:hover {
+  background: #d45500;
+  transform: scale(1.05);
+}
+
+.paginationButton:active {
+  transform: scale(0.95);
+}
+
+.paginationNumbers {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.paginationNumber {
+  background: transparent;
+  border: none;
+  color: rgba(23, 23, 23, 0.6);
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease;
+  font-family: var(--font-manrope), sans-serif;
+  position: relative;
+}
+
+.paginationNumber:hover {
+  color: #E55E00;
+}
+
+.paginationNumber.active {
+  color: #E55E00;
+  font-weight: 600;
+}
+
+.paginationNumber.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 2px;
+  background: #E55E00;
+}
+
+/* Heading */
+.heading {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.2;
+  color: var(--foreground, #171717);
+  font-family: var(--font-manrope), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Intro Text */
+.introText {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  line-height: 1.4;
+  text-align: center;
+  color: rgba(23, 23, 23, 0.7);
+  margin: 0 auto 1.5rem;
+  max-width: 800px;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+/* Feature Grid */
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* Feature Card */
+.featureCard {
+  background: transparent;
+  padding: 1.5rem;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+}
+
+.featureIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E55E00;
+  margin-bottom: 0.25rem;
+}
+
+.featureTitle {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 700;
+  margin: 0;
+  color: var(--foreground, #171717);
+  font-family: var(--font-manrope), sans-serif;
+  line-height: 1.3;
+}
+
+.featureDescription {
+  font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+  line-height: 1.4;
+  color: rgba(23, 23, 23, 0.7);
+  margin: 0;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .paginationWrapper {
+    padding: 1.5rem clamp(24px, 4vw, 48px) 0.75rem;
+  }
+
+  .aboutUsSection {
+    padding: 32px clamp(24px, 4vw, 48px) 48px;
+  }
+
+  .featureGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .paginationWrapper {
+    padding: 1.25rem 24px 2rem;
+  }
+
+  .aboutUsSection {
+    padding: 18px 24px 24px;
+  }
+
+  .pagination {
+    margin-bottom: 0;
+    gap: 1rem;
+  }
+
+  .paginationButton {
+    width: 36px;
+    height: 36px;
+  }
+
+  .paginationNumbers {
+    gap: 0.75rem;
+  }
+
+  .paginationNumber {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .heading {
+    margin-bottom: 1rem;
+  }
+
+  .introText {
+    margin-bottom: 3rem;
+  }
+
+  .featureGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .featureCard {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .paginationWrapper {
+    padding: 1rem 20px 1.75rem;
+  }
+
+  .aboutUsSection {
+    padding: 16px 20px 24px;
+  }
+
+  .pagination {
+    gap: 0.75rem;
+  }
+
+  .paginationButton {
+    width: 32px;
+    height: 32px;
+  }
+
+  .paginationButton svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .paginationNumbers {
+    gap: 0.5rem;
+  }
+
+  .paginationNumber {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}

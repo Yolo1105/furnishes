@@ -1,0 +1,78 @@
+.comfortLevelSelector {
+  width: 100%;
+}
+
+.segmentedControl {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  background: #f8f8f8;
+  padding: 0.5rem;
+  border-radius: 12px;
+}
+
+.segment {
+  padding: 1.5rem 1rem;
+  background: white;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  text-align: center;
+}
+
+.segment:hover {
+  border-color: #E55E00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(229, 94, 0, 0.15);
+}
+
+.segment.selected {
+  background: #fff8f5;
+  border-color: #E55E00;
+  box-shadow: 0 4px 16px rgba(229, 94, 0, 0.2);
+}
+
+.segmentName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.segmentRange {
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.segmentDescription {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 24px;
+  height: 24px;
+  background: #E55E00;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .segmentedControl {
+    grid-template-columns: 1fr;
+  }
+}

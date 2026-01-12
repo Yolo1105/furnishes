@@ -1,0 +1,89 @@
+.textureGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px 28px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.textureCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 150ms ease-out;
+}
+
+.textureCard:hover:not(.disabled) {
+  opacity: 0.9;
+}
+
+.textureCard.selected {
+  animation: selectPulse 150ms ease-out;
+}
+
+@keyframes selectPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.textureCard.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  overflow: hidden;
+  background: #FFFEF8;
+  border: 2px solid transparent;
+  transition: border-color 150ms ease;
+}
+
+.textureCard.selected .imageWrapper {
+  border-color: #E55E00;
+  box-shadow: 0 0 0 1px rgba(229, 94, 0, 0.2);
+}
+
+.image {
+  object-fit: cover;
+}
+
+.name {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #737373;
+  text-align: center;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.textureCard.selected .name {
+  color: #1C1C1C;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .textureGrid {
+    gap: 24px;
+  }
+
+  .imageWrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+}

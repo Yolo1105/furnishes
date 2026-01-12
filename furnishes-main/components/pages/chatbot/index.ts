@@ -1,0 +1,11 @@
+export { ChatSidebar } from './ChatSidebar';
+export type { ChatHistoryItem } from './ChatSidebar';
+export { ChatArea } from './ChatArea';
+export { ChatInput } from './ChatInput';
+export { ThinkingIndicator } from './ThinkingIndicator';
+export { PreferenceBubble } from './PreferenceBubble';
+export { SourceHighlightedMessage } from './SourceHighlightedMessage';
+export type { Message } from '@/types/chat';
+export type { ChatAreaMessage } from './ChatArea';
+export { ProjectInfoPanel } from './ProjectInfoPanel';
+export type { ProjectInfo } from './ProjectInfoPanel';

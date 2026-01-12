@@ -1,0 +1,167 @@
+/* Popup Backdrop - Removed, no backdrop needed */
+
+/* Popup Wrapper - Handles positioning */
+.popupWrapper {
+  z-index: 121;
+  pointer-events: none;
+}
+
+/* Popup Container - Consistent size */
+.popup {
+  background: #fdf8f4;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 300px;
+  max-width: 300px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 20px;
+  pointer-events: auto;
+  position: relative;
+}
+
+.popup::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, #FF7A1A 0%, #E55E00 100%);
+  border-radius: 0.75rem 0 0 0.75rem;
+  z-index: 1;
+}
+
+.popupClickable {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.popupClickable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation states */
+.popupEntering {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  animation: slideUpFadeIn 0.5s ease-out forwards;
+}
+
+.popupVisible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.popupExiting {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: none;
+  animation: slideDownFadeOut 0.5s ease-out forwards;
+}
+
+/* Slide up with fade in animation */
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide down with fade out animation */
+@keyframes slideDownFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+
+/* Popup Header */
+.popupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 0.875rem;
+  border-bottom: 1px solid #e5e5e5;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.popupTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: color 0.2s ease, transform 0.2s ease;
+  border-radius: 0.25rem;
+  width: 24px;
+  height: 24px;
+}
+
+.closeButton:hover {
+  color: #111;
+  background: #f5f5f5;
+  transform: rotate(90deg);
+}
+
+.closeButton:active {
+  transform: rotate(90deg) scale(0.95);
+}
+
+/* Popup Content */
+.popupContent {
+  padding: 0.875rem;
+  overflow: hidden;
+  flex: 1;
+  font-family: var(--font-manrope), sans-serif;
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .popup {
+    width: 280px;
+    max-width: 280px;
+    min-width: 280px;
+    border-radius: 0.75rem;
+  }
+
+  .popupHeader {
+    padding: 0.625rem 0.875rem;
+  }
+
+  .popupTitle {
+    font-size: 0.9rem;
+  }
+
+  .popupContent {
+    padding: 0.875rem;
+  }
+}

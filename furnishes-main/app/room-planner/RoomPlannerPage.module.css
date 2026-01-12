@@ -1,0 +1,151 @@
+.roomPlannerPage {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #FFFEF8;
+}
+
+.section {
+  min-height: 80vh;
+  width: 100%;
+  padding: 3rem 2rem;
+  position: relative;
+  background-color: #FFFEF8;
+}
+
+.contentLayer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pageHeader {
+  margin-bottom: 1rem;
+}
+
+.progressChip {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #f8f8f8;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.pageTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.pageSubtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.twoColumnLayout {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.leftColumn,
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.actionBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 2px solid #f0f0f0;
+  margin-top: 2rem;
+}
+
+.backButton {
+  padding: 0.75rem 1.5rem;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  color: #666;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  border-color: #E55E00;
+  color: #E55E00;
+  background: #fff8f5;
+}
+
+.continueButton {
+  padding: 0.75rem 2rem;
+  background: #E55E00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.continueButton:hover:not(.disabled) {
+  background: #d45000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(229, 94, 0, 0.3);
+}
+
+.continueButton.disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+@media (max-width: 1200px) {
+  .twoColumnLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .leftColumn {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .pageTitle {
+    font-size: 1.5rem;
+  }
+
+  .actionBar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .backButton,
+  .continueButton {
+    width: 100%;
+  }
+}

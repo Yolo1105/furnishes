@@ -1,0 +1,391 @@
+/* Customization Panel Styles */
+
+.customizationPanel {
+  background: #FFFEF8;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+}
+
+.noSelection {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+}
+
+.noSelection p {
+  margin: 0.5rem 0;
+}
+
+.itemDetails {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.itemName {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.itemPrice {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #E55E00;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tab {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.tab.active {
+  color: #E55E00;
+  border-bottom: 2px solid #E55E00;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.tab:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Components Section */
+.componentsSection {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.componentGroup {
+  margin-bottom: 2rem;
+}
+
+.componentGroup:last-child {
+  margin-bottom: 0;
+}
+
+.componentTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 1rem 0;
+}
+
+.componentOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.componentOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: #FFFEF8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.componentOption:hover {
+  border-color: #E55E00;
+  background: rgba(229, 94, 0, 0.05);
+}
+
+.componentOption.selected {
+  border-color: #E55E00;
+  background: rgba(229, 94, 0, 0.1);
+}
+
+.componentInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.componentName {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #111;
+  line-height: 1.2;
+}
+
+.componentPrice {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #E55E00;
+}
+
+/* Customize Section */
+.customizeSection {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.selectedComponentInfo {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(229, 94, 0, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(229, 94, 0, 0.2);
+}
+
+.selectedComponentTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 0.5rem 0;
+}
+
+.selectedComponentPrice {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #E55E00;
+  margin: 0;
+}
+
+/* Rotation Section */
+.rotationSection {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.rotationTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 0.75rem;
+}
+
+.rotationControls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.rotateButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #FFFEF8;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rotateButton:hover {
+  background: #f5f5f5;
+  border-color: #E55E00;
+}
+
+.rotateButton svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Scaling Section */
+.scalingSection {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.scalingTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 0.75rem;
+}
+
+.scalingControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.scaleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #FFFEF8;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scaleButton:hover {
+  background: #f5f5f5;
+  border-color: #E55E00;
+}
+
+.scaleButton svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.scaleLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Color Section */
+.colorSection {
+  margin-bottom: 1.5rem;
+}
+
+.colorTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 0.75rem;
+}
+
+.colorSwatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.colorSwatch {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.colorSwatch:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.colorSwatch.selected {
+  border-color: #E55E00;
+  box-shadow: 0 0 0 2px rgba(229, 94, 0, 0.3);
+}
+
+/* Material Section */
+.materialSection {
+  margin-bottom: 1.5rem;
+}
+
+.materialTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 0.75rem;
+}
+
+.materialOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.materialOption {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: #FFFEF8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.materialOption:hover {
+  border-color: #E55E00;
+  background: rgba(229, 94, 0, 0.05);
+}
+
+.materialOption.selected {
+  border-color: #E55E00;
+  background: rgba(229, 94, 0, 0.1);
+}
+
+.materialIcon {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.materialInfo {
+  flex: 1;
+}
+
+.materialName {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 0.25rem;
+}
+
+.materialDesc {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+@media (max-width: 900px) {
+  .customizationPanel {
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}

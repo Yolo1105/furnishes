@@ -1,0 +1,110 @@
+.quizContainer {
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #FFFEF8;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.quizContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #FFFEF8;
+  min-height: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.pageWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #FFFEF8;
+  width: 100%;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pageWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Page transition animations */
+.pageWrapper > * {
+  animation: pageFadeIn 200ms ease-in;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Left section animation */
+.pageWrapper > * > :first-child {
+  animation: leftFadeIn 200ms ease-in;
+}
+
+@keyframes leftFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Right section animation */
+.pageWrapper > * > :last-child {
+  animation: rightSlideIn 300ms ease-out;
+}
+
+@keyframes rightSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .quizContainer {
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageWrapper {
+    animation: none;
+  }
+
+  .pageWrapper > * {
+    animation: none;
+  }
+}

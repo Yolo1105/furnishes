@@ -1,0 +1,71 @@
+.highlightedMessage {
+  display: inline;
+}
+
+.highlight {
+  background: rgba(255, 139, 80, 0.15);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  border-bottom: 2px solid #ff8b50;
+  font-weight: 500;
+  cursor: help;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.highlight:hover {
+  background: rgba(255, 139, 80, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(255, 139, 80, 0.3);
+}
+
+/* Different colors for different fields using current color scheme */
+.highlight[data-field="roomType"] {
+  background: rgba(229, 94, 0, 0.1);
+  border-bottom-color: #E55E00;
+}
+
+.highlight[data-field="roomType"]:hover {
+  background: rgba(229, 94, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(229, 94, 0, 0.3);
+}
+
+.highlight[data-field="designStyle"] {
+  background: rgba(255, 139, 80, 0.15);
+  border-bottom-color: #ff8b50;
+}
+
+.highlight[data-field="designStyle"]:hover {
+  background: rgba(255, 139, 80, 0.25);
+  box-shadow: 0 2px 4px rgba(255, 139, 80, 0.3);
+}
+
+.highlight[data-field="budgetRange"] {
+  background: rgba(229, 94, 0, 0.1);
+  border-bottom-color: #E55E00;
+}
+
+.highlight[data-field="budgetRange"]:hover {
+  background: rgba(229, 94, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(229, 94, 0, 0.3);
+}
+
+.highlight[data-field="colorTheme"] {
+  background: rgba(255, 139, 80, 0.15);
+  border-bottom-color: #ff8b50;
+}
+
+.highlight[data-field="colorTheme"]:hover {
+  background: rgba(255, 139, 80, 0.25);
+  box-shadow: 0 2px 4px rgba(255, 139, 80, 0.3);
+}
+
+.highlight[data-field="mustBuyFurniture"] {
+  background: rgba(255, 139, 80, 0.15);
+  border-bottom-color: #ff8b50;
+}
+
+.highlight[data-field="mustBuyFurniture"]:hover {
+  background: rgba(255, 139, 80, 0.25);
+  box-shadow: 0 2px 4px rgba(255, 139, 80, 0.3);
+}

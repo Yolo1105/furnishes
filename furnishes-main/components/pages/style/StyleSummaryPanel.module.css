@@ -1,0 +1,200 @@
+.panel {
+  background: #fff8f5;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.panelSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.roomHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.roomNameInput {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  border: none;
+  background: transparent;
+  padding: 0.25rem 0;
+  width: 100%;
+  outline: none;
+}
+
+.roomNameInput::placeholder {
+  color: #999;
+}
+
+.modeBadge {
+  padding: 0.25rem 0.75rem;
+  background: white;
+  border: 2px solid #E55E00;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #E55E00;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.primaryStyleValue {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.accentsHint {
+  font-size: 0.875rem;
+  color: #666;
+  font-style: italic;
+}
+
+.snapshotText {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.examplesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.examplePlaceholder {
+  aspect-ratio: 1;
+  background: #f0f0f0;
+  border-radius: 8px;
+  border: 2px dashed #e0e0e0;
+}
+
+.guardrailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.guardrailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.guardrailLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.guardrailButton {
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #666;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.guardrailButton:hover {
+  border-color: #E55E00;
+  color: #E55E00;
+}
+
+.guardrailValue {
+  font-size: 0.875rem;
+  color: #666;
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+}
+
+/* Legacy styles for guided mode */
+.directionName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 0.5rem;
+}
+
+.paletteChips {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.colorChip {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.materials {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.rulesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.keepRules,
+.avoidRules {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.ruleIcon {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.keepRules .ruleIcon {
+  color: #4caf50;
+}
+
+.avoidRules .ruleIcon {
+  color: #f44336;
+}
+
+.placeholder {
+  font-size: 0.875rem;
+  color: #999;
+  font-style: italic;
+  text-align: center;
+  padding: 2rem 0;
+}

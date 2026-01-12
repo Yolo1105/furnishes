@@ -1,0 +1,183 @@
+/* Circle Loader Styles */
+.loader6 {
+  position: relative;
+  display: inline-block;
+  pointer-events: none;
+}
+
+/* Static circle that's always visible */
+.loader6::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  z-index: 1;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+.loader6 span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  pointer-events: none;
+}
+
+.loader6 span::before,
+.loader6 span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  border: 3px solid #FFFFFF;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 16px rgba(255, 255, 255, 0.4);
+  animation: loader-6-1 var(--loader-duration, 1.5s) cubic-bezier(0.075, 0.820, 0.165, 1.000) infinite;
+  animation-delay: var(--loader-delay-1, 0s);
+  animation-fill-mode: both;
+}
+
+@keyframes loader-6-1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0);
+    opacity: 0;
+  }
+  1% {
+    transform: translate3d(0, 0, 0) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(calc(1.5 * var(--loader-scale, 1)));
+    opacity: 0;
+  }
+}
+
+.loader6 span::after {
+  animation: loader-6-2 var(--loader-duration, 1.5s) cubic-bezier(0.075, 0.820, 0.165, 1.000) infinite;
+  animation-delay: var(--loader-delay-2, 0.25s);
+  animation-fill-mode: both;
+}
+
+@keyframes loader-6-2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0);
+    opacity: 0;
+  }
+  1% {
+    transform: translate3d(0, 0, 0) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(calc(1 * var(--loader-scale, 1)));
+    opacity: 0;
+  }
+}
+
+/* Size variants */
+.small {
+  height: 24px;
+  width: 24px;
+}
+
+.small::before {
+  height: 24px;
+  width: 24px;
+  border-width: 1.5px;
+}
+
+.small span {
+  height: 24px;
+  width: 24px;
+}
+
+.small span::before,
+.small span::after {
+  height: 24px;
+  width: 24px;
+  border-width: 2px;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.6), 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.medium {
+  height: 32px;
+  width: 32px;
+}
+
+.medium::before {
+  height: 32px;
+  width: 32px;
+  border-width: 2px;
+}
+
+.medium span {
+  height: 32px;
+  width: 32px;
+}
+
+.medium span::before,
+.medium span::after {
+  height: 32px;
+  width: 32px;
+  border-width: 3px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6), 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.large {
+  height: 48px;
+  width: 48px;
+}
+
+.large::before {
+  height: 48px;
+  width: 48px;
+  border-width: 2.5px;
+}
+
+.large span {
+  height: 48px;
+  width: 48px;
+}
+
+.large span::before,
+.large span::after {
+  height: 48px;
+  width: 48px;
+  border-width: 4px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Clickable and hover effects */
+.clickable {
+  transition: transform 0.3s ease;
+}
+
+.clickable:hover {
+  transform: scale(1.2);
+}
+
+.clickable:active {
+  transform: scale(1.1);
+}

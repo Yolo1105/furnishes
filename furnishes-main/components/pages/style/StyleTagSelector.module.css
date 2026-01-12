@@ -1,0 +1,60 @@
+.styleTagSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.searchBar {
+  width: 100%;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  background: white;
+  transition: border-color 0.2s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #E55E00;
+}
+
+.tagGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.styleTag {
+  padding: 0.625rem 1rem;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #2c2c2c;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.styleTag:hover {
+  border-color: #E55E00;
+  background: #fff8f5;
+}
+
+.styleTag.selected {
+  background: #E55E00;
+  border-color: #E55E00;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .tagGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}

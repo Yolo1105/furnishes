@@ -1,0 +1,31 @@
+/* Playground Layout Styles */
+
+.playgroundContainer {
+  display: grid;
+  grid-template-columns: clamp(200px, 18vw, 260px) 1fr clamp(220px, 20vw, 300px);
+  height: 100vh;
+  min-height: 100vh;
+  background: var(--background, #FFFEF8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 12;
+  min-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .playgroundContainer {
+    grid-template-columns: clamp(180px, 20vw, 220px) 1fr clamp(200px, 22vw, 260px);
+  }
+}
+
+@media (max-width: 900px) {
+  .playgroundContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    min-height: 100vh;
+  }
+}

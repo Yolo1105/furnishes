@@ -1,0 +1,76 @@
+.statisticsSection {
+  background: #FFFEF8;
+  padding: 3rem clamp(24px, 5vw, 56px);
+  border-bottom: 1px solid rgba(229, 94, 0, 0.15);
+}
+
+.statisticsContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.statCount {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  justify-content: center;
+}
+
+.countNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.countLabel {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #111;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.statCategory {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #111;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+@media (max-width: 1024px) {
+  .statisticsContainer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .statisticsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .countNumber {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .statisticsContainer {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

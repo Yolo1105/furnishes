@@ -1,0 +1,205 @@
+.panel {
+  background: #fff8f5;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.panelSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.roomHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.budgetTotal {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0.25rem 0 0 0;
+}
+
+.modeBadge {
+  padding: 0.25rem 0.75rem;
+  background: white;
+  border: 2px solid #E55E00;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #E55E00;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.comfortLevelValue {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.strictnessValue {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}
+
+.categoryBar {
+  display: flex;
+  height: 32px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.categorySegment {
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.categorySegment:hover {
+  opacity: 0.8;
+}
+
+.allocationsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.allocationRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #f0f0f0;
+}
+
+.allocationInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.allocationLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.allocationAmount {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #E55E00;
+}
+
+.allocationMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.allocationPercent {
+  font-size: 0.75rem;
+  color: #999;
+  font-weight: 600;
+}
+
+.tag {
+  padding: 0.25rem 0.5rem;
+  background: #f8f8f8;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.guardrailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.guardrailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.guardrailLabel {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.guardrailValue {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.healthMessage {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  padding: 1rem;
+  background: #f8f8f8;
+  border-radius: 6px;
+  font-style: italic;
+}
+
+/* Legacy styles for backward compatibility */
+.panelHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.modeLabel {
+  font-size: 0.75rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.summaryLabel {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.strictnessChip {
+  padding: 0.25rem 0.75rem;
+  background: #f8f8f8;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #666;
+  align-self: flex-start;
+}

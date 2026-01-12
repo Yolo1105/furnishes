@@ -1,0 +1,249 @@
+.stylePackOutput {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.editButton {
+  background: none;
+  border: 1px solid #e0e0e0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.editButton:hover {
+  border-color: #E55E00;
+  color: #E55E00;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.directionName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.directionDescription {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.paletteGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.colorChip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.colorSquare {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.colorSquare:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.copiedToast {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  z-index: 10;
+  animation: fadeInOut 2s ease;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  10%, 90% { opacity: 1; }
+}
+
+.colorLabel {
+  font-size: 0.75rem;
+  color: #666;
+  text-align: center;
+}
+
+.materials {
+  font-size: 1rem;
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+
+.rules {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.keepRules,
+.avoidRules {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #2c2c2c;
+}
+
+.ruleIcon {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.keepRules .ruleIcon {
+  color: #4a7c59;
+}
+
+.avoidRules .ruleIcon {
+  color: #c44;
+}
+
+.evidenceSection {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.evidenceToggle {
+  background: none;
+  border: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.evidenceToggle:hover {
+  color: #E55E00;
+}
+
+.evidenceContent {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.evidenceList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.evidenceList li {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.evidenceList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #E55E00;
+  font-weight: bold;
+}
+
+.refinementSection {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.refinementTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.refinementButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.refinementButtons button {
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.refinementButtons button:hover {
+  border-color: #E55E00;
+  color: #E55E00;
+  background: #fff8f5;
+}

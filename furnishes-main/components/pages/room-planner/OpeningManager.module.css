@@ -1,0 +1,89 @@
+.openingManager {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.openingCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.openingIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.openingContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.openingType {
+  font-weight: 600;
+  color: #2c2c2c;
+  font-size: 0.875rem;
+}
+
+.openingSelect {
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #666;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.openingSelect:hover {
+  border-color: #E55E00;
+}
+
+.removeButton {
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.removeButton:hover {
+  border-color: #c44;
+  color: #c44;
+  background: #fff5f5;
+}
+
+.addButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.addButton {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: white;
+  border: 2px solid #E55E00;
+  border-radius: 8px;
+  color: #E55E00;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.addButton:hover {
+  background: #E55E00;
+  color: white;
+}

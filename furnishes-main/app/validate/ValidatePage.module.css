@@ -1,0 +1,52 @@
+.validatePage {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #FFFEF8;
+}
+
+.section {
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #FFFEF8;
+}
+
+.contentLayer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.placeholder {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.placeholder h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111;
+  font-family: var(--font-manrope), sans-serif;
+  margin-bottom: 1rem;
+}
+
+.placeholder p {
+  font-size: 1.2rem;
+  color: #333;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+}

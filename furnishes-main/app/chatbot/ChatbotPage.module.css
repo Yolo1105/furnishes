@@ -1,0 +1,177 @@
+.chatbotPage {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  z-index: 12;
+}
+
+.heroWrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Main Chat Section - Three Column Layout */
+.chatSection {
+  display: flex;
+  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+  background: #ffeddf;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Scroll to Chat Button */
+.scrollToChatButton {
+  position: absolute;
+  bottom: 2rem;
+  right: clamp(34px, 5.5vw, 91px);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.scrollToChatButton:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.scrollToChatButton:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.scrollToChatButton svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Left Sidebar - Chat History */
+.sidebarLeft {
+  flex: 0 0 clamp(220px, 20vw, 320px);
+  min-width: 0;
+  max-width: none;
+  border-right: 1px solid #f2e9e1;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Main Content - Chat Interface */
+.mainContent {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  background: #ffeddf;
+  position: relative;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Right Sidebar - Project Info */
+.sidebarRight {
+  flex: 0 0 clamp(240px, 22vw, 360px);
+  min-width: 0;
+  max-width: none;
+  border-left: 1px solid #f2e9e1;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+  .sidebarLeft {
+    flex-basis: clamp(200px, 22vw, 260px);
+  }
+  .sidebarRight {
+    flex-basis: clamp(220px, 24vw, 300px);
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebarLeft {
+    flex-basis: clamp(180px, 26vw, 220px);
+  }
+  .sidebarRight {
+    flex-basis: clamp(200px, 28vw, 240px);
+  }
+}
+
+@media (max-width: 800px) {
+  .chatSection {
+    flex-direction: column;
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  .scrollToChatButton {
+    width: 3rem;
+    height: 3rem;
+    bottom: 1.5rem;
+    right: clamp(34px, 5.5vw, 91px);
+  }
+
+  .scrollToChatButton svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .sidebarLeft, .sidebarRight {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    border: none;
+    border-bottom: 1px solid #f2e9e1;
+    height: auto;
+    max-height: 200px;
+    flex: 0 0 auto;
+  }
+  
+  .sidebarRight {
+    border-bottom: none;
+    border-top: 1px solid #f2e9e1;
+  }
+  
+  .mainContent {
+    flex: 1 1 0;
+    min-height: 400px;
+  }
+}
+

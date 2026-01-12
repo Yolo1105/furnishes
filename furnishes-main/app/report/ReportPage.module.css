@@ -1,0 +1,185 @@
+.reportPage {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #FFFEF8;
+}
+
+.section {
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #FFFEF8;
+}
+
+.contentLayer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.placeholder {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.placeholder h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111;
+  font-family: var(--font-manrope), sans-serif;
+  margin-bottom: 1rem;
+}
+
+.placeholder p {
+  font-size: 1.2rem;
+  color: #333;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.summaryCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.summaryCard {
+  padding: 1.5rem;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cardTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cardValue {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.cardStatus {
+  font-size: 0.875rem;
+  color: #4a7c59;
+}
+
+.exportSection {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  background: #4a7c59;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease;
+  z-index: 1000;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.nextSteps {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: #f8f8f8;
+  border-radius: 12px;
+}
+
+.nextStepsTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0 0 1rem 0;
+}
+
+.nextStepsList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.nextStepsList li {
+  font-size: 0.875rem;
+  color: #666;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.nextStepsList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #E55E00;
+  font-weight: bold;
+}
+
+.newProjectButton {
+  padding: 0.75rem 1.5rem;
+  background: #E55E00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.newProjectButton:hover {
+  background: #d45000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(229, 94, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .summaryCards {
+    grid-template-columns: 1fr;
+  }
+}

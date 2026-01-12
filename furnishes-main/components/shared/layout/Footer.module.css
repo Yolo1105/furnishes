@@ -1,0 +1,364 @@
+.footer {
+  position: relative;
+  z-index: 10;
+  background: #2C2C2C;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.footerInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem clamp(24px, 5vw, 56px) 1rem;
+}
+
+/* Footer Grid */
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.3fr;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Brand Section */
+.brandSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.brandLogo {
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  font-stretch: condensed;
+  line-height: 1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.brandChar {
+  color: #fef0e0;
+  display: inline;
+  transition: color 0.3s ease;
+}
+
+.brandCharAccent {
+  color: #E55E00;
+  display: inline;
+  transition: color 0.3s ease;
+}
+
+.brandTagline {
+  color: #999;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* Contact Info */
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.contactLink {
+  color: #fef0e0;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  color: #E55E00;
+}
+
+.contactDetail {
+  color: #777;
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* Link Columns */
+.linkColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.columnTitle {
+  color: #fef0e0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.25rem 0;
+}
+
+.linkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.footerLink {
+  color: #999;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.footerLink:hover {
+  color: #E55E00;
+}
+
+/* Newsletter Section */
+.newsletterSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.newsletterText {
+  color: #999;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 300;
+}
+
+.newsletterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.newsletterInput {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(254, 240, 224, 0.15);
+  padding: 0.5rem 0.75rem;
+  color: #fef0e0;
+  font-size: 0.8rem;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.newsletterInput::placeholder {
+  color: #666;
+}
+
+.newsletterInput:focus {
+  border-color: #E55E00;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.newsletterButton {
+  background: #E55E00;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.newsletterButton:hover {
+  background: #FF7A1A;
+}
+
+.newsletterButton:active {
+  transform: scale(0.98);
+}
+
+/* Social Links */
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.socialLink {
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.socialLink:hover {
+  color: #E55E00;
+}
+
+/* Bottom Bar */
+.bottomBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(254, 240, 224, 0.1);
+}
+
+.copyright {
+  color: #666;
+  font-size: 0.7rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legalLink {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.legalLink:hover {
+  color: #E55E00;
+}
+
+.legalSeparator {
+  color: #444;
+  font-size: 0.7rem;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .footerGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .brandSection {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(254, 240, 224, 0.1);
+    margin-bottom: 0.25rem;
+  }
+
+  .brandSection > div:first-child {
+    flex: 1;
+  }
+
+  .contactInfo {
+    margin-top: 0;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .newsletterSection {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(254, 240, 224, 0.1);
+    margin-top: 0.25rem;
+  }
+
+  .newsletterSection .columnTitle {
+    flex: 0 0 100%;
+  }
+
+  .newsletterText {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .newsletterForm {
+    flex-direction: row;
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .newsletterInput {
+    flex: 1;
+  }
+
+  .socialLinks {
+    margin-top: 0;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .footerInner {
+    padding: 1.5rem 20px 0.75rem;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .brandSection {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contactInfo {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .newsletterSection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .newsletterForm {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .legalLinks {
+    flex-wrap: wrap;
+  }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 480px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .linkColumn {
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(254, 240, 224, 0.05);
+  }
+
+  .brandLogo {
+    font-size: 1.2rem;
+  }
+}

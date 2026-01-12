@@ -1,0 +1,124 @@
+.liveSnapshot {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  color: #999;
+  margin: 0 0 1.5rem 0;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.directionName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.paletteChips {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.colorChip {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.budgetBar {
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.budgetFill {
+  height: 100%;
+  background: #E55E00;
+  transition: width 0.3s ease;
+}
+
+.budgetText {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.budgetStatus {
+  font-size: 0.75rem;
+  color: #4a7c59;
+  font-weight: 500;
+}
+
+.roomInfo {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.roomOpenings {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.itemsCount {
+  font-size: 0.875rem;
+  color: #2c2c2c;
+}
+
+.healthStatus {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.healthStatus.green {
+  color: #4a7c59;
+}
+
+.healthStatus.needs_attention {
+  color: #f5a623;
+}
+
+.healthStatus.blocked {
+  color: #c44;
+}

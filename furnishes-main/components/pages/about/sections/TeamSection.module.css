@@ -1,0 +1,214 @@
+.teamSection {
+  width: 100%;
+  padding: 4rem 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.orangeButton {
+  display: inline-block;
+  background-color: #FF7A1A;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 3rem;
+  font-family: var(--font-manrope), sans-serif;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.orangeButton.animateIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Text Section - Top Layout */
+.textSection {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.leftText {
+  flex: 1;
+  min-width: 300px;
+}
+
+.mainHeading {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.4;
+  color: #111;
+  margin: 0;
+  font-family: var(--font-manrope), sans-serif;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.mainHeading.animateIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rightText {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.descriptionText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+  margin: 0;
+  max-width: 500px;
+  font-family: var(--font-manrope), sans-serif;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+}
+
+.descriptionText.animateIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.teamGrid.animateIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.teamCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+.teamCard.animateIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.teamCard:hover {
+  transform: translateY(-5px);
+  box-shadow: none;
+}
+
+.memberImage {
+  width: 280px;
+  height: 350px;
+  border-radius: 0;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.memberName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.1rem;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.memberTitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  background: transparent;
+  color: #E55E00;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialLink:hover {
+  background: transparent;
+  color: #FF7A1A;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .textSection {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .leftText,
+  .rightText {
+    min-width: 100%;
+  }
+  
+  .rightText {
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .mainHeading {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+  }
+  
+  .descriptionText {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+}

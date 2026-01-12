@@ -1,0 +1,89 @@
+.ratingControl {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1C1C1C;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.leftLabel,
+.rightLabel {
+  font-size: 14px;
+  color: #737373;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ratingButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  border: 2px solid #E8E8E8;
+  background: #FFFEF8;
+  color: #1C1C1C;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--font-manrope), sans-serif;
+  transition: all 150ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ratingButton:hover {
+  border-color: #E55E00;
+  background: #FFFEF8;
+  transform: translateY(-2px);
+}
+
+.ratingButton.selected {
+  background: #E55E00;
+  border-color: #E55E00;
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+.ratingButton.selected:hover {
+  background: #cc5200;
+  border-color: #cc5200;
+}
+
+@media (max-width: 768px) {
+  .buttonsContainer {
+    gap: 6px;
+  }
+
+  .ratingButton {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .label {
+    font-size: 16px;
+  }
+
+  .leftLabel,
+  .rightLabel {
+    font-size: 13px;
+  }
+}

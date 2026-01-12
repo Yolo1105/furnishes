@@ -1,0 +1,78 @@
+.modeSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}
+
+.modeToggle {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.modeCard {
+  padding: 1.5rem;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modeCard:hover {
+  border-color: #E55E00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(229, 94, 0, 0.15);
+}
+
+.modeCard.active {
+  border-color: #E55E00;
+  background: #fff8f5;
+  box-shadow: 0 4px 16px rgba(229, 94, 0, 0.2);
+}
+
+.modeTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.modeDescription {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .modeToggle {
+    grid-template-columns: 1fr;
+  }
+}

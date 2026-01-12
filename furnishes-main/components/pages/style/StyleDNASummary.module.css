@@ -1,0 +1,18 @@
+.summary {
+  padding: 1.5rem;
+  background: #f8f8f8;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.summaryText {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.summaryText strong {
+  color: #2c2c2c;
+  font-weight: 600;
+}

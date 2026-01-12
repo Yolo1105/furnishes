@@ -1,0 +1,33 @@
+.descriptionInput {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  background: white;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+  line-height: 1.6;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #E55E00;
+}
+
+.textarea::placeholder {
+  color: #999;
+}

@@ -1,0 +1,179 @@
+.roomSetupPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dimensionsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.sectionDescription {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}
+
+.dimensionInputs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.dimensionInput {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.inputLabel {
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 0.5rem;
+  background: white;
+  transition: border-color 0.2s ease;
+}
+
+.inputWrapper:focus-within {
+  border-color: #E55E00;
+}
+
+.stepperButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.stepperButton:hover {
+  background: #E55E00;
+  border-color: #E55E00;
+  color: white;
+}
+
+.numberInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  background: transparent;
+  text-align: center;
+}
+
+.numberInput::-webkit-inner-spin-button,
+.numberInput::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.numberInput[type=number] {
+  -moz-appearance: textfield;
+}
+
+.unit {
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 500;
+  min-width: 30px;
+}
+
+.inputHint {
+  font-size: 0.75rem;
+  color: #999;
+  font-style: italic;
+}
+
+.derivedInfo {
+  padding: 1rem;
+  background: #f8f8f8;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infoLabel {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.infoValue {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.advancedSection {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 1rem;
+}
+
+.advancedToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.advancedToggle:hover {
+  color: #E55E00;
+}
+
+.advancedContent {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .dimensionInputs {
+    grid-template-columns: 1fr;
+  }
+}

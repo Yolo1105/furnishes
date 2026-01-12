@@ -1,0 +1,323 @@
+.mainContent {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #ffeddf;
+  overflow: hidden;
+  height: 100%;
+}
+
+.welcomeContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(4rem, 11.25vw, 11.25rem) clamp(1rem, 1.25vw, 1.25rem);
+  min-height: clamp(300px, 25vh, 400px);
+  transition: all 0.3s ease;
+  margin-top: 0px;
+  position: relative;
+  z-index: 1;
+}
+
+.welcomeIcon {
+  font-size: 40px;
+  color: #ff8b50;
+  margin-bottom: 10px;
+}
+
+.welcomeTitle {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 4px;
+  color: #E55E00;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.welcomeDescription {
+  font-size: clamp(0.75rem, 0.8125vw, 0.8125rem);
+  color: #666;
+  text-align: center;
+  max-width: clamp(280px, 20vw, 320px);
+  margin-bottom: clamp(0.875rem, 1vw, 1rem);
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 clamp(0.625rem, 0.75vw, 0.75rem) 0 clamp(0.625rem, 0.75vw, 0.75rem);
+  position: relative;
+  z-index: 1;
+  min-height: clamp(300px, 25vh, 400px);
+}
+
+.messagesContainer {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 32px 0 16px 0;
+  margin-top: 0px;
+  min-height: 0;
+}
+
+.messageWrapper {
+  margin-bottom: 12px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  animation: slideInFromBottom 0.4s ease-out both;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.messageWrapper:first-child {
+  margin-top: 20px;
+}
+
+.messageWrapper:nth-child(1) { animation-delay: 0.1s; }
+.messageWrapper:nth-child(2) { animation-delay: 0.2s; }
+.messageWrapper:nth-child(3) { animation-delay: 0.3s; }
+.messageWrapper:nth-child(4) { animation-delay: 0.4s; }
+.messageWrapper:nth-child(5) { animation-delay: 0.5s; }
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #E55E00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  flex-shrink: 0;
+  color: #fff;
+  font-size: 18px;
+}
+
+.message {
+  background: #fff;
+  color: #333;
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-width: 75%;
+  word-wrap: break-word;
+  font-size: 14px;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  font-family: var(--font-manrope), sans-serif;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.userMessage {
+  margin-left: auto;
+  background: #fff;
+  border-radius: 12px 12px 2px 12px;
+}
+
+.assistantMessage {
+  margin-right: auto;
+  background: #fff;
+  border-radius: 12px 12px 12px 2px;
+}
+
+.assistantMessage.essentialMessage {
+  background: #fff5f0;
+  border: 1.5px solid #E55E00;
+  color: #E55E00;
+  box-shadow: 0 2px 4px rgba(229, 94, 0, 0.1);
+}
+
+.messageContent {
+  white-space: normal;
+  line-height: 1.5;
+  color: inherit;
+}
+
+.messageContent :global(p) {
+  margin: 0 0 0.75rem 0;
+}
+
+.messageContent :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+.messageContent :global(strong) {
+  font-weight: 600;
+  color: inherit;
+}
+
+.messageContent :global(em) {
+  font-style: italic;
+}
+
+.messageContent :global(code) {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.messageContent :global(ul),
+.messageContent :global(ol) {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+}
+
+.messageContent :global(li) {
+  margin: 0.25rem 0;
+  line-height: 1.5;
+}
+
+.messageContent :global(h1),
+.messageContent :global(h2),
+.messageContent :global(h3) {
+  margin: 12px 0 8px 0;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.messageContent :global(h1) {
+  font-size: 1.3em;
+}
+
+.messageContent :global(h2) {
+  font-size: 1.2em;
+}
+
+.messageContent :global(h3) {
+  font-size: 1.1em;
+}
+
+.messageFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+  gap: 8px;
+  padding-top: 2px;
+}
+
+.messageTime {
+  font-size: 11px;
+  color: #999;
+  flex: 1;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.copyButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  border-radius: 4px;
+}
+
+.messageWrapper:hover .copyButton {
+  opacity: 1;
+}
+
+.copyButton:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: scale(1.1);
+}
+
+.copyButton:active {
+  transform: scale(0.95);
+}
+
+.copyIcon {
+  font-size: 14px;
+  color: #999;
+  transition: color 0.2s ease;
+}
+
+.copyButton:hover .copyIcon {
+  color: #ff8b50;
+}
+
+.copyButton:active .copyIcon {
+  color: #e97932;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.preferenceBubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  margin-left: 46px;
+  padding: 0.5rem 0;
+  margin-bottom: 8px;
+}
+
+.greetingWrapper {
+  margin-bottom: 16px;
+  margin-top: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  animation: slideInFromBottom 0.4s ease-out both;
+}
+
+.greetingMessage {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4a3f38;
+  margin: 0;
+  font-family: var(--font-manrope), sans-serif;
+  flex: 1;
+}
+
+.statusWrapper {
+  margin-bottom: 12px;
+  margin-top: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  animation: slideInFromBottom 0.4s ease-out both;
+}
+
+.statusMessage {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #d4926a;
+  margin: 0;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.taskCardWrapper {
+  margin-bottom: 12px;
+  margin-top: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  animation: slideInFromBottom 0.4s ease-out both;
+}
+
+.feedbackWrapper {
+  margin-bottom: 12px;
+  margin-top: 4px;
+  animation: slideInFromBottom 0.4s ease-out both;
+}

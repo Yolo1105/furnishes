@@ -1,0 +1,150 @@
+.visualTasteGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.imageCard {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.imageCard:hover:not(.disabled) {
+  border-color: #E55E00;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(229, 94, 0, 0.15);
+}
+
+.imageCard.selected {
+  border-color: #E55E00;
+  border-width: 3px;
+  box-shadow: 0 4px 16px rgba(229, 94, 0, 0.2);
+}
+
+.imageCard.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.image {
+  transition: transform 0.2s ease;
+}
+
+.imageCard:hover:not(.disabled) .image {
+  transform: scale(1.05);
+}
+
+.imageCard.selected .image {
+  filter: brightness(0.95);
+}
+
+.checkmarkBadge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 32px;
+  height: 32px;
+  background: #E55E00;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.cardInfo {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cardLabel {
+  font-weight: 600;
+  color: #2c2c2c;
+  font-size: 0.875rem;
+}
+
+.cardDescription {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+
+.progressText {
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.progressDots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  transition: background 0.2s ease;
+}
+
+.dot.filled {
+  background: #E55E00;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
