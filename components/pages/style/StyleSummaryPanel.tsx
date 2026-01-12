@@ -128,7 +128,7 @@ export default function StyleSummaryPanel({
             )}
           </div>
           <div className={styles.guardrailItem}>
-            <span className={styles.guardrailLabel}>Hard no's</span>
+            <span className={styles.guardrailLabel}>Hard no&apos;s</span>
             {onHardNosChange ? (
               <button
                 className={styles.guardrailButton}

@@ -38,10 +38,10 @@ export default function StyleDNASummary({
         <strong>{minimalLayered} / 100</strong> on minimal vs layered.{' '}
         {hardNos.length > 0 ? (
           <>
-            Hard no's: <strong>{hardNos.join(', ')}</strong>.
+            Hard no&apos;s: <strong>{hardNos.join(', ')}</strong>.
           </>
         ) : (
-          <>Hard no's: <strong>None yet</strong>.</>
+          <>Hard no&apos;s: <strong>None yet</strong>.</>
         )}
       </p>
     </div>

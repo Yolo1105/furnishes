@@ -466,7 +466,7 @@ export default function BudgetPage() {
                     <div className={styles.questionCard}>
                       <div className={styles.questionNum}>2 of 6</div>
                       <div className={styles.questionLabel}>How big is the space?</div>
-                      <div className={styles.questionHint}>This helps us estimate how many pieces you'll need.</div>
+                      <div className={styles.questionHint}>This helps us estimate how many pieces you&apos;ll need.</div>
                       <div className={styles.questionOptions}>
                         <button className={`${styles.questionOption} ${questions.size === 'small' ? styles.selected : ''}`} onClick={() => setQuestion('size', 'small')}>
                           <span className={styles.optionTitle}>Cozy</span>
