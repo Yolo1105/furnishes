@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useCallback, useEffect, useRef } from 'react';
+import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import PageHero from '@/components/shared/ui/PageHero';
 import { 
   ChatSidebar, 
@@ -158,17 +158,7 @@ export default function ChatbotPage() {
   const currentThinkingStatus = THINKING_STATUS_MESSAGES[typingStatusIndex % THINKING_STATUS_MESSAGES.length];
 
   // Demo responses that cycle through different feature showcases
-  const DEMO_RESPONSES: Array<{
-    type: 'greeting' | 'status' | 'text' | 'taskCard' | 'feedback';
-    content?: string;
-    isEssential?: boolean;
-    taskCard?: TaskCard;
-    feedback?: FeedbackMessage;
-    preferenceExtractions?: PreferenceExtraction[];
-    preferenceRemovals?: PreferenceRemoval[];
-    sourceHighlights?: SourceHighlight[];
-    updateProjectInfo?: (prev: ProjectInfo) => ProjectInfo;
-  }> = [
+  const DEMO_RESPONSES = useMemo(() => [
     {
       type: 'greeting',
       content: 'Good morning!',
@@ -299,7 +289,17 @@ export default function ChatbotPage() {
         mustBuyFurniture: ['sectional sofa', 'coffee table'],
       }),
     },
-  ];
+  ] as Array<{
+    type: 'greeting' | 'status' | 'text' | 'taskCard' | 'feedback';
+    content?: string;
+    isEssential?: boolean;
+    taskCard?: TaskCard;
+    feedback?: FeedbackMessage;
+    preferenceExtractions?: PreferenceExtraction[];
+    preferenceRemovals?: PreferenceRemoval[];
+    sourceHighlights?: SourceHighlight[];
+    updateProjectInfo?: (prev: ProjectInfo) => ProjectInfo;
+  }>, []);
 
   // Generate demo response that cycles through feature showcases
   const generateResponse = useCallback((userMessage: string): ChatAreaMessage => {
@@ -329,7 +329,7 @@ export default function ChatbotPage() {
       preferenceRemovals: response.preferenceRemovals,
       sourceHighlights: response.sourceHighlights,
     };
-  }, [DEMO_RESPONSES]);
+  }, []); // DEMO_RESPONSES is stable via useMemo
 
   // Send message handler
   const handleSendMessage = useCallback((content: string) => {

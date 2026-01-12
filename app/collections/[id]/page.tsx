@@ -182,7 +182,7 @@ export default function ProductDetailPage() {
             {!collapsedSections.materials && (
               <div className={styles.accordionContent}>
                 <div className={styles.materialList}>
-                  {product.materials.map((material, index) => (
+                  {product.materials?.map((material: { name: string; value: string }, index) => (
                     <div key={index} className={styles.materialItem}>
                       <span>{material.name}</span>
                       <span>{material.value}</span>
