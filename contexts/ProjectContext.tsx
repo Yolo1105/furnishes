@@ -1,15 +1,16 @@
 'use client';
 
-import React, { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
-import type { 
-  ProjectState, 
-  StylePack, 
-  BudgetPlan, 
-  RoomConfig, 
-  PlacedItem, 
+import React, { createContext, useContext, useReducer, useEffect, useRef, ReactNode } from 'react';
+import type {
+  ProjectState,
+  StylePack,
+  BudgetPlan,
+  RoomConfig,
+  PlacedItem,
   LayoutHealth,
-  ProjectStep 
+  ProjectStep,
 } from '@/types/project';
+import { readVersionedJson, writeVersionedJson } from '@/lib/storage';
 
 // Action types
 type ProjectAction =
@@ -109,21 +110,32 @@ interface ProjectContextType {
   resetProject: () => void;
 }
 
+const PROJECT_STORAGE_KEY = 'furnishes_project_v1';
+const LEGACY_PROJECT_KEY = 'furnishesProject';
+
 // Create context
 const ProjectContext = createContext<ProjectContextType | undefined>(undefined);
 
 // Provider component
 export function ProjectProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(projectReducer, initialState);
+  const saveTimeoutIdRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Load from localStorage on mount
+  // Load from localStorage on mount (versioned first, then legacy migration)
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window === 'undefined') return;
+
+    const restored = readVersionedJson<Partial<ProjectState>>(PROJECT_STORAGE_KEY);
+    if (restored) {
+      dispatch({ type: 'LOAD_FROM_STORAGE', payload: restored });
+    } else {
       try {
-        const saved = localStorage.getItem('furnishesProject');
+        const saved = window.localStorage.getItem(LEGACY_PROJECT_KEY);
         if (saved) {
-          const parsed = JSON.parse(saved);
+          const parsed = JSON.parse(saved) as Partial<ProjectState>;
           dispatch({ type: 'LOAD_FROM_STORAGE', payload: parsed });
+          writeVersionedJson(PROJECT_STORAGE_KEY, { ...initialState, ...parsed });
+          window.localStorage.removeItem(LEGACY_PROJECT_KEY);
         }
       } catch (error) {
         console.error('Failed to load project from localStorage:', error);
@@ -131,15 +143,24 @@ export function ProjectProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  // Save to localStorage whenever state changes
+  // Debounced save to localStorage (300ms)
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        localStorage.setItem('furnishesProject', JSON.stringify(state));
-      } catch (error) {
-        console.error('Failed to save project to localStorage:', error);
-      }
+    if (typeof window === 'undefined') return;
+
+    if (saveTimeoutIdRef.current !== null) {
+      clearTimeout(saveTimeoutIdRef.current);
     }
+
+    saveTimeoutIdRef.current = setTimeout(() => {
+      writeVersionedJson(PROJECT_STORAGE_KEY, state);
+      saveTimeoutIdRef.current = null;
+    }, 300);
+
+    return () => {
+      if (saveTimeoutIdRef.current !== null) {
+        clearTimeout(saveTimeoutIdRef.current);
+      }
+    };
   }, [state]);
 
   // Helper functions
@@ -186,7 +207,8 @@ export function ProjectProvider({ children }: { children: ReactNode }) {
   const resetProject = () => {
     dispatch({ type: 'RESET_PROJECT' });
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('furnishesProject');
+      window.localStorage.removeItem(PROJECT_STORAGE_KEY);
+      window.localStorage.removeItem(LEGACY_PROJECT_KEY);
     }
   };
 

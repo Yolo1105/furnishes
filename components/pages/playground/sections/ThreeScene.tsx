@@ -70,7 +70,7 @@ export default function ThreeScene({
       ))}
       
       {/* Transform Controls for selected furniture */}
-      {state.selectedItem && isTransformActive && (
+      {state.selectedItem && isTransformActive && selectedFurnitureRef.current && (
         <TransformControls
           mode={transformMode}
           object={selectedFurnitureRef.current}

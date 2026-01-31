@@ -9,6 +9,7 @@ export default function HeroSection() {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const node = ref.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -18,13 +19,13 @@ export default function HeroSection() {
       { threshold: 0.1 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (node) {
+      observer.observe(node);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (node) {
+        observer.unobserve(node);
       }
     };
   }, []);
@@ -64,7 +65,6 @@ export default function HeroSection() {
                 width={300}
                 height={200}
                 className={styles.image}
-                priority
               />
             </div>
             <div className={`${styles.imageContainer} ${styles.bottom} ${isVisible ? styles.animateIn : ''}`}>
@@ -74,7 +74,6 @@ export default function HeroSection() {
                 width={300}
                 height={200}
                 className={styles.image}
-                priority
               />
             </div>
           </div>

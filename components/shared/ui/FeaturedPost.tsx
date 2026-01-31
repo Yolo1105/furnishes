@@ -20,7 +20,7 @@ const FeaturedPost: React.FC<FeaturedPostProps> = ({ post, onClick }) => {
           width={600}
           height={400}
           className={styles.image}
-          unoptimized
+          sizes="(max-width: 768px) 100vw, 600px"
         />
         <div className={styles.imageOverlay} />
         <div className={styles.featuredBadge}>Featured</div>
@@ -35,7 +35,7 @@ const FeaturedPost: React.FC<FeaturedPostProps> = ({ post, onClick }) => {
               width={48}
               height={48}
               className={styles.avatar}
-              unoptimized
+              sizes="48px"
             />
           </div>
           <div className={styles.authorInfo}>

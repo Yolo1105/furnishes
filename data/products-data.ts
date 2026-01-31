@@ -3,7 +3,7 @@ const getImagePath = (imageName: string) => {
   return `/images/${imageName}`;
 };
 
-// Re-export Product type from types folder
+import type { Product } from '@/types/product';
 export type { Product } from '@/types/product';
 
 // Function to get full product details
@@ -20,7 +20,7 @@ export const getProductDetails = (product: Product): Product => {
     rating: 4.5 + Math.random() * 0.5, // Random rating between 4.5 and 5.0
     reviewCount: Math.floor(Math.random() * 50) + 20,
     sizes: product.type.includes('Sofa') ? ['2-Seat', '3-Seat', 'Sectional'] : ['Standard'],
-    colors: product.color.map((c, i) => ({
+    colors: product.color.map((c: string, i: number) => ({
       name: ['Charcoal', 'Dark Gray', 'Mustard', 'Beige', 'Green', 'Navy', 'Brown'][i] || 'Custom',
       value: c,
     })),
@@ -39,7 +39,7 @@ export const getProductDetails = (product: Product): Product => {
       seatDepth: '58 cm / 22.8 in',
       weight: '68 kg / 150 lbs',
     },
-    materials: product.material.map(m => ({
+    materials: product.material.map((m: string) => ({
       name: m,
       value: `Premium ${m}`,
     })),

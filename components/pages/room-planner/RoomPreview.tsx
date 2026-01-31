@@ -90,10 +90,10 @@ export default function RoomPreview({ roomConfig, onOpeningChange }: RoomPreview
         <div>
           <h3 className={styles.previewTitle}>Preview</h3>
           <p className={styles.previewSubtitle}>
-              {placementMode 
+            {placementMode 
               ? `Click a wall to place ${placementMode === 'door' ? 'door' : 'window'}. Press Esc to cancel.`
               : roomConfig 
-                ? 'Click &quot;Add door&quot; or &quot;Add window&quot; to start placement'
+                ? 'Click "Add door" or "Add window" to start placement'
                 : 'Select a preset or enter dimensions. Preview updates instantly.'}
           </p>
         </div>
@@ -155,7 +155,7 @@ export default function RoomPreview({ roomConfig, onOpeningChange }: RoomPreview
               <g key={`ruler-top-${i}`}>
                 <line x1={x} y1="0" x2={x} y2="8" stroke="#e0e0e0" strokeWidth="1" />
                 {i % 2 === 0 && (
-                  <text x={x} y="6" fontSize="8" fill="#999" textAnchor="middle">{i * gridSize}&apos;</text>
+                  <text x={x} y="6" fontSize="8" fill="#999" textAnchor="middle">{i * gridSize}'</text>
                 )}
               </g>
             );
@@ -169,7 +169,7 @@ export default function RoomPreview({ roomConfig, onOpeningChange }: RoomPreview
               <g key={`ruler-left-${i}`}>
                 <line x1="0" y1={y} x2="8" y2={y} stroke="#e0e0e0" strokeWidth="1" />
                 {i % 2 === 0 && (
-                  <text x="6" y={y + 4} fontSize="8" fill="#999" textAnchor="end">{i * gridSize}&apos;</text>
+                  <text x="6" y={y + 4} fontSize="8" fill="#999" textAnchor="end">{i * gridSize}'</text>
                 )}
               </g>
             );
@@ -399,7 +399,7 @@ export default function RoomPreview({ roomConfig, onOpeningChange }: RoomPreview
         {(roomConfig || true) && (
           <div className={styles.roomSummary}>
             <div className={styles.summaryRow}>
-              <span className={styles.summaryLabel}>{width}&apos; × {length}&apos;</span>
+              <span className={styles.summaryLabel}>{width}' × {length}'</span>
             </div>
             <div className={styles.summaryRow}>
               <span className={styles.summaryValue}>{width * length} sq ft</span>

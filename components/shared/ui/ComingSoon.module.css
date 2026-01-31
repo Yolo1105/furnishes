@@ -1,0 +1,18 @@
+.wrapper {
+  min-height: 100vh;
+}
+
+.content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3rem) clamp(24px, 3.5vw, 56px);
+}
+
+.message {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--color-text-secondary, #4a4a4a);
+  line-height: 1.6;
+  margin: 0;
+}

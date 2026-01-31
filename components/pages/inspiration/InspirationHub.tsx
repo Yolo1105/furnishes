@@ -130,15 +130,6 @@ export default function InspirationHub() {
         {/* Header */}
         <header className={styles.header}>
           <div className={styles.headerInner}>
-            <div
-              className={`${styles.labelContainer} ${
-                loaded ? styles.loaded : ''
-              }`}
-            >
-              <div className={styles.labelLine} />
-              <span className={styles.label}>Inspiration Hub</span>
-            </div>
-
             <div className={styles.titleSection}>
               <h1
                 className={`${styles.title} ${loaded ? styles.loaded : ''}`}
@@ -210,7 +201,7 @@ export default function InspirationHub() {
         >
           <div className={styles.footerInner}>
             <p className={styles.footerQuote}>
-              &quot;Your home deserves to be taken seriously.&quot;
+              "Your home deserves to be taken seriously."
             </p>
 
             <div className={styles.footerStats}>

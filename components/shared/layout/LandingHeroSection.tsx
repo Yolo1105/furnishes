@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import styles from './LandingHeroSection.module.css';
 import CircleLoader from '../ui/CircleLoader';
 import Popup from '../ui/Popup';
@@ -363,11 +362,9 @@ const LandingHeroSection: React.FC = () => {
         return (
           <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', width: '100%' }}>
             <div style={{ flex: '0 0 90px', width: '90px', height: '90px' }}>
-              <Image 
+              <img 
                 src="/images/hero-modern-room.jpg" 
                 alt="Playground" 
-                width={90}
-                height={90}
                 style={{ 
                   width: '100%', 
                   height: '100%', 
@@ -390,11 +387,9 @@ const LandingHeroSection: React.FC = () => {
         return (
           <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', width: '100%' }}>
             <div style={{ flex: '0 0 90px', width: '90px', height: '90px' }}>
-              <Image 
+              <img 
                 src="/images/hero-modern-room.jpg" 
                 alt="About Us" 
-                width={90}
-                height={90}
                 style={{ 
                   width: '100%', 
                   height: '100%', 
@@ -417,11 +412,9 @@ const LandingHeroSection: React.FC = () => {
         return (
           <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', width: '100%' }}>
             <div style={{ flex: '0 0 90px', width: '90px', height: '90px' }}>
-              <Image 
+              <img 
                 src="/images/hero-modern-room.jpg" 
                 alt="Contact" 
-                width={90}
-                height={90}
                 style={{ 
                   width: '100%', 
                   height: '100%', 
@@ -444,11 +437,9 @@ const LandingHeroSection: React.FC = () => {
         return (
           <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', width: '100%' }}>
             <div style={{ flex: '0 0 90px', width: '90px', height: '90px' }}>
-              <Image 
+              <img 
                 src="/images/hero-modern-room.jpg" 
                 alt="Collections" 
-                width={90}
-                height={90}
                 style={{ 
                   width: '100%', 
                   height: '100%', 
@@ -479,7 +470,7 @@ const LandingHeroSection: React.FC = () => {
     >
       <div className={styles.heroBgWrap}>
         <div className={styles.heroMediaBox}>
-          <Image src="/images/landing-banner.jpg" alt="Modern interior design space" fill className={styles.heroBgImage} />
+          <img src="/images/landing-banner.jpg" alt="Modern interior design space" className={styles.heroBgImage} />
           <div className={styles.heroVideoOverlay}></div>
         </div>
       </div>

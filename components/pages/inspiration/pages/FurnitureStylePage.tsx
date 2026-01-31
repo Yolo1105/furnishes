@@ -18,7 +18,7 @@ export default function FurnitureStylePage() {
     setAnswer('page-7', newValues);
   };
 
-  // Initialize default values
+  // Initialize default values on mount only
   React.useEffect(() => {
     if (Object.keys(ratingValues).length === 0) {
       const defaults: Record<string, number> = {};
@@ -27,6 +27,7 @@ export default function FurnitureStylePage() {
       });
       setAnswer('page-7', defaults);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional: set defaults once on mount
   }, []);
 
   return (

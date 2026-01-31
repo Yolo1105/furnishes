@@ -47,7 +47,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, mode, onClose, onSuccess,
               alt="Beautiful interior"
               fill
               style={{ objectFit: 'cover' }}
-              unoptimized
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
             <div className={styles.authImageOverlay}>
               <div className={styles.authBrandLogo}>FURNISHES</div>

@@ -33,15 +33,15 @@ export default function StyleDNASummary({
   return (
     <div className={styles.summary}>
       <p className={styles.summaryText}>
-        Pick a primary style to anchor this room. We&apos;ll keep the room at{' '}
+        Pick a primary style to anchor this room. We'll keep the room at{' '}
         <strong>{calmEnergetic} / 100</strong> on the calm vs energetic scale and{' '}
         <strong>{minimalLayered} / 100</strong> on minimal vs layered.{' '}
         {hardNos.length > 0 ? (
           <>
-            Hard no&apos;s: <strong>{hardNos.join(', ')}</strong>.
+            Hard no's: <strong>{hardNos.join(', ')}</strong>.
           </>
         ) : (
-          <>Hard no&apos;s: <strong>None yet</strong>.</>
+          <>Hard no's: <strong>None yet</strong>.</>
         )}
       </p>
     </div>

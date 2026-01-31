@@ -58,7 +58,7 @@ export default function PresetButtons({ selectedPresetId, onSelect }: PresetButt
               )}
               <div className={styles.presetName}>{preset.name}</div>
               <div className={styles.presetDimensions}>
-                {preset.dimensions.width}&apos; × {preset.dimensions.length}&apos;
+                {preset.dimensions.width}' × {preset.dimensions.length}'
               </div>
               <div className={styles.presetNote}>{preset.note}</div>
             </button>

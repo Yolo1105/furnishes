@@ -1,4 +1,5 @@
 // Style Discovery Questionnaire Data
+import type { StyleType } from '@/contexts/StyleDiscoveryContext';
 
 export interface SpaceOption {
   id: string;

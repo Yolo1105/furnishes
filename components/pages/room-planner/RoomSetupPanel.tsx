@@ -33,7 +33,7 @@ export default function RoomSetupPanel({
       };
       onConfigChange(defaultConfig);
     }
-  }, [roomConfig, onConfigChange]);
+  }, []);
 
   const handlePresetSelect = (preset: { id: string; dimensions: { width: number; length: number; ceiling: number } }) => {
     setSelectedPresetId(preset.id);

@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import styles from './PageHero.module.css';
@@ -9,6 +7,7 @@ interface PageHeroProps {
   imageAlt?: string;
   title?: string;
   titleLines?: string[]; // Array of lines for the big text (e.g., ["Curated", "Furniture", "Collections"])
+  titleHighlight?: string; // Optional word to emphasize (used with title; display uses title)
   description?: string;
 }
 
@@ -67,7 +66,7 @@ const addOrangeAccents = (text: string): React.ReactNode => {
   });
 };
 
-export default function PageHero({ imageSrc, imageAlt = 'Page hero image', title, titleLines, description }: PageHeroProps) {
+export default function PageHero({ imageSrc, imageAlt = 'Page hero image', title, titleLines, titleHighlight: _titleHighlight, description }: PageHeroProps) {
   const hasContent = (titleLines && titleLines.length > 0) || description;
   
   // Use titleLines if provided, otherwise fall back to title
@@ -95,11 +94,17 @@ export default function PageHero({ imageSrc, imageAlt = 'Page hero image', title
             {/* Left: Big text lines */}
             {displayLines.length > 0 && (
               <div className={styles.heroLeftText}>
-                {displayLines.map((line, index) => (
-                  <h1 key={index} className={styles.heroBigLine}>
-                    {addOrangeAccents(line)}
-                  </h1>
-                ))}
+                <h1>
+                  {displayLines.map((line, index) => (
+                    <span
+                      key={index}
+                      className={styles.heroBigLine}
+                      style={{ display: "block" }}
+                    >
+                      {addOrangeAccents(line)}
+                    </span>
+                  ))}
+                </h1>
               </div>
             )}
             {/* Right: Small descriptive text */}

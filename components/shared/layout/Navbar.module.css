@@ -34,7 +34,7 @@
 
 .infoButtonAnimated {
   animation: slideDown 1s ease-out forwards;
-  animation-delay: 1s; /* Show just after Furnishes finishes (0s delay + 1s duration) */
+  animation-delay: var(--animation-delay, 0s); /* Same delay as Furnishes so they animate together */
 }
 
 .infoButton {

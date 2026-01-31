@@ -548,19 +548,20 @@ const Furniture3D = forwardRef<Group, Furniture3DProps>(function Furniture3D({
 
       default:
         return (
-          <mesh 
-            ref={meshRef}
-            position={position} 
-            rotation={rotation} 
-            scale={scale} 
-            onPointerDown={handlePointerDown}
-            onPointerUp={handlePointerUp}
-            onPointerMove={handlePointerMove}
-            onPointerLeave={handlePointerUp}
-          >
-            <boxGeometry args={[1, 1, 1]} />
-            <meshStandardMaterial color={getMaterialColor(item.color)} />
-          </mesh>
+          <group ref={meshRef}>
+            <mesh 
+              position={position} 
+              rotation={rotation} 
+              scale={scale} 
+              onPointerDown={handlePointerDown}
+              onPointerUp={handlePointerUp}
+              onPointerMove={handlePointerMove}
+              onPointerLeave={handlePointerUp}
+            >
+              <boxGeometry args={[1, 1, 1]} />
+              <meshStandardMaterial color={getMaterialColor(item.color)} />
+            </mesh>
+          </group>
         );
     }
   };

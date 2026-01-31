@@ -242,6 +242,7 @@ const Navbar = () => {
               {idx === 0 && (
                 <button 
                   className={`${styles.infoButton} ${styles.infoButtonWrapper} ${isLoaded ? styles.infoButtonAnimated : ''}`}
+                  style={{ '--animation-delay': '0s' } as React.CSSProperties}
                   aria-label="Guidance" 
                   title="Get Started Guide"
                   onClick={() => setIsGuidanceModalOpen(true)}

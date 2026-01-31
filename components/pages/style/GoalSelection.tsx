@@ -57,7 +57,7 @@ const goalOptions: GoalOption[] = [
 const challengeOptions: ChallengeOption[] = [
   { id: 'clutter', label: 'Visual clutter and chaos' },
   { id: 'lighting', label: 'Poor lighting affecting mood' },
-  { id: 'rest', label: "Can&apos;t relax or rest well" },
+  { id: 'rest', label: "Can't relax or rest well" },
   { id: 'distractions', label: 'Too many distractions' }
 ];
 
@@ -105,7 +105,7 @@ export default function GoalSelection({
       </div>
 
       <div className={styles.section}>
-        <h3 className={styles.question}>What&apos;s your biggest challenge at home?</h3>
+        <h3 className={styles.question}>What's your biggest challenge at home?</h3>
         <div className={styles.challengeList}>
           {challengeOptions.map((challenge) => (
             <label key={challenge.id} className={styles.challengeOption}>

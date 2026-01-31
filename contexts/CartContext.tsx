@@ -1,6 +1,7 @@
 'use client';
 
-import React, { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useReducer, useEffect, useRef, ReactNode } from 'react';
+import { readVersionedJson, writeVersionedJson } from '@/lib/storage';
 
 // Cart item interface
 export interface CartItem {
@@ -194,64 +195,84 @@ interface CartContextType {
   itemCount: number;
 }
 
+const CART_STORAGE_KEY = 'furnishes_cart_v1';
+
 // Create context
 const CartContext = createContext<CartContextType | undefined>(undefined);
+
+type CartPersisted = Pick<CartState, 'items' | 'savedForLater' | 'promoCode' | 'discount'>;
 
 // Provider component
 export function CartProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(cartReducer, initialState);
+  const saveTimeoutIdRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Load from localStorage on mount
+  // Load from localStorage on mount (versioned first, then legacy migration)
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window === 'undefined') return;
+
+    const restored = readVersionedJson<CartPersisted>(CART_STORAGE_KEY);
+    if (restored) {
+      dispatch({ type: 'LOAD_FROM_STORAGE', payload: restored });
+    } else {
       try {
-        const savedCart = localStorage.getItem('furnishes_cart');
-        const savedForLater = localStorage.getItem('furnishes_saved_for_later');
-        const savedPromo = localStorage.getItem('furnishes_promo_code');
-        const savedDiscount = localStorage.getItem('furnishes_discount');
+        const savedCart = window.localStorage.getItem('furnishes_cart');
+        const savedForLater = window.localStorage.getItem('furnishes_saved_for_later');
+        const savedPromo = window.localStorage.getItem('furnishes_promo_code');
+        const savedDiscount = window.localStorage.getItem('furnishes_discount');
 
         const payload: Partial<CartState> = {};
-
-        if (savedCart) {
-          payload.items = JSON.parse(savedCart);
-        }
-        if (savedForLater) {
-          payload.savedForLater = JSON.parse(savedForLater);
-        }
-        if (savedPromo) {
-          payload.promoCode = savedPromo;
-        }
-        if (savedDiscount) {
-          payload.discount = parseFloat(savedDiscount);
-        }
+        if (savedCart) payload.items = JSON.parse(savedCart);
+        if (savedForLater) payload.savedForLater = JSON.parse(savedForLater);
+        if (savedPromo) payload.promoCode = savedPromo;
+        if (savedDiscount) payload.discount = parseFloat(savedDiscount);
 
         if (Object.keys(payload).length > 0) {
           dispatch({ type: 'LOAD_FROM_STORAGE', payload });
+          const toPersist: CartPersisted = {
+            items: payload.items ?? [],
+            savedForLater: payload.savedForLater ?? [],
+            promoCode: payload.promoCode ?? null,
+            discount: payload.discount ?? 0,
+          };
+          writeVersionedJson(CART_STORAGE_KEY, toPersist);
+          window.localStorage.removeItem('furnishes_cart');
+          window.localStorage.removeItem('furnishes_saved_for_later');
+          window.localStorage.removeItem('furnishes_promo_code');
+          window.localStorage.removeItem('furnishes_discount');
         }
       } catch (error) {
         console.error('Failed to load cart from localStorage:', error);
       }
-      dispatch({ type: 'SET_INITIALIZED' });
     }
+    dispatch({ type: 'SET_INITIALIZED' });
   }, []);
 
-  // Save to localStorage whenever state changes
+  // Debounced save to localStorage (300ms)
   useEffect(() => {
-    if (state.isInitialized && typeof window !== 'undefined') {
-      try {
-        localStorage.setItem('furnishes_cart', JSON.stringify(state.items));
-        localStorage.setItem('furnishes_saved_for_later', JSON.stringify(state.savedForLater));
-        if (state.promoCode) {
-          localStorage.setItem('furnishes_promo_code', state.promoCode);
-        } else {
-          localStorage.removeItem('furnishes_promo_code');
-        }
-        localStorage.setItem('furnishes_discount', state.discount.toString());
-      } catch (error) {
-        console.error('Failed to save cart to localStorage:', error);
-      }
+    if (!state.isInitialized) return;
+
+    if (saveTimeoutIdRef.current !== null) {
+      clearTimeout(saveTimeoutIdRef.current);
     }
-  }, [state.items, state.savedForLater, state.promoCode, state.discount, state.isInitialized]);
+
+    saveTimeoutIdRef.current = setTimeout(() => {
+      const toPersist: CartPersisted = {
+        items: state.items,
+        savedForLater: state.savedForLater,
+        promoCode: state.promoCode,
+        discount: state.discount,
+      };
+      writeVersionedJson(CART_STORAGE_KEY, toPersist);
+      saveTimeoutIdRef.current = null;
+    }, 300);
+
+    return () => {
+      if (saveTimeoutIdRef.current !== null) {
+        clearTimeout(saveTimeoutIdRef.current);
+      }
+    };
+  }, [state.isInitialized, state.items, state.savedForLater, state.promoCode, state.discount]);
 
   // Helper function to generate unique ID
   const generateId = () => {

@@ -35,7 +35,7 @@ const PostCard: React.FC<PostCardProps> = ({ post, onClick }) => {
           width={400}
           height={300}
           className={styles.image}
-          unoptimized
+          sizes="(max-width: 768px) 100vw, 400px"
         />
         <div className={styles.imageOverlay} />
         {post.featured && (
@@ -52,7 +52,7 @@ const PostCard: React.FC<PostCardProps> = ({ post, onClick }) => {
               width={40}
               height={40}
               className={styles.avatar}
-              unoptimized
+              sizes="40px"
             />
           </div>
           <span className={styles.authorName}>{post.author.name}</span>

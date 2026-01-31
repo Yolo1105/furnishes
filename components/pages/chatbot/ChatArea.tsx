@@ -12,6 +12,8 @@ import { FeedbackRow } from './FeedbackRow';
 import type { PreferenceExtraction, PreferenceRemoval, SourceHighlight } from '@/types/preferences';
 import type { MessageType, TaskCard as TaskCardType, FeedbackMessage } from '@/types/chat';
 
+const TIMEOUTS = { COPY_FEEDBACK: 2000 } as const;
+
 export interface ChatAreaMessage extends Omit<Message, 'content'> {
   type?: MessageType;
   content?: string;
